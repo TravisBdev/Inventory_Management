@@ -13,5 +13,7 @@ namespace Travis_Brown_Inventory_Management {
         public AddPartForm() {
             InitializeComponent();
         }
+
+        
     }
 }
