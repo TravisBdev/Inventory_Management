@@ -31,7 +31,15 @@
             button1 = new Button();
             button2 = new Button();
             dataGridView1 = new DataGridView();
+            Part_ID = new DataGridViewTextBoxColumn();
+            Part_Name = new DataGridViewTextBoxColumn();
+            Part_Inventory = new DataGridViewTextBoxColumn();
+            Part_Price = new DataGridViewTextBoxColumn();
             dataGridView2 = new DataGridView();
+            Product_ID = new DataGridViewTextBoxColumn();
+            Product_Name = new DataGridViewTextBoxColumn();
+            Product_Inventory = new DataGridViewTextBoxColumn();
+            Product_Price = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -44,14 +52,6 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
-            Product_ID = new DataGridViewTextBoxColumn();
-            Product_Name = new DataGridViewTextBoxColumn();
-            Product_Inventory = new DataGridViewTextBoxColumn();
-            Product_Price = new DataGridViewTextBoxColumn();
-            Part_ID = new DataGridViewTextBoxColumn();
-            Part_Name = new DataGridViewTextBoxColumn();
-            Part_Inventory = new DataGridViewTextBoxColumn();
-            Part_Price = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -90,18 +90,62 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Part_ID, Part_Name, Part_Inventory, Part_Price });
             dataGridView1.Location = new Point(12, 186);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(443, 150);
             dataGridView1.TabIndex = 3;
+            // 
+            // Part_ID
+            // 
+            Part_ID.HeaderText = "Part ID";
+            Part_ID.Name = "Part_ID";
+            // 
+            // Part_Name
+            // 
+            Part_Name.HeaderText = "Part Name";
+            Part_Name.Name = "Part_Name";
+            // 
+            // Part_Inventory
+            // 
+            Part_Inventory.HeaderText = "Inventory";
+            Part_Inventory.Name = "Part_Inventory";
+            // 
+            // Part_Price
+            // 
+            Part_Price.HeaderText = "Price";
+            Part_Price.Name = "Part_Price";
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Product_ID, Product_Name, Product_Inventory, Product_Price });
             dataGridView2.Location = new Point(644, 186);
+            dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(444, 150);
             dataGridView2.TabIndex = 4;
+            // 
+            // Product_ID
+            // 
+            Product_ID.HeaderText = "Product ID";
+            Product_ID.Name = "Product_ID";
+            // 
+            // Product_Name
+            // 
+            Product_Name.HeaderText = "Product Name";
+            Product_Name.Name = "Product_Name";
+            // 
+            // Product_Inventory
+            // 
+            Product_Inventory.HeaderText = "Inventory";
+            Product_Inventory.Name = "Product_Inventory";
+            // 
+            // Product_Price
+            // 
+            Product_Price.HeaderText = "Price";
+            Product_Price.Name = "Product_Price";
             // 
             // label2
             // 
@@ -208,51 +252,11 @@
             button9.Text = "Exit";
             button9.UseVisualStyleBackColor = true;
             // 
-            // Product_ID
-            // 
-            Product_ID.HeaderText = "Product ID";
-            Product_ID.Name = "Product_ID";
-            // 
-            // Product_Name
-            // 
-            Product_Name.HeaderText = "Product Name";
-            Product_Name.Name = "Product_Name";
-            // 
-            // Product_Inventory
-            // 
-            Product_Inventory.HeaderText = "Inventory";
-            Product_Inventory.Name = "Product_Inventory";
-            // 
-            // Product_Price
-            // 
-            Product_Price.HeaderText = "Price";
-            Product_Price.Name = "Product_Price";
-            // 
-            // Part_ID
-            // 
-            Part_ID.HeaderText = "Part ID";
-            Part_ID.Name = "Part_ID";
-            // 
-            // Part_Name
-            // 
-            Part_Name.HeaderText = "Part Name";
-            Part_Name.Name = "Part_Name";
-            // 
-            // Part_Inventory
-            // 
-            Part_Inventory.HeaderText = "Inventory";
-            Part_Inventory.Name = "Part_Inventory";
-            // 
-            // Part_Price
-            // 
-            Part_Price.HeaderText = "Price";
-            Part_Price.Name = "Part_Price";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1100, 550);
+            ClientSize = new Size(1107, 550);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
