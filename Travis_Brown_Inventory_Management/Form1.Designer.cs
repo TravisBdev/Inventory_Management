@@ -31,15 +31,7 @@
             button1 = new Button();
             button2 = new Button();
             dataGridView1 = new DataGridView();
-            PartID = new DataGridViewTextBoxColumn();
-            PartName = new DataGridViewTextBoxColumn();
-            PartInventory = new DataGridViewTextBoxColumn();
-            PartPrice = new DataGridViewTextBoxColumn();
             dataGridView2 = new DataGridView();
-            ProductID = new DataGridViewTextBoxColumn();
-            ProductName = new DataGridViewTextBoxColumn();
-            ProductInventory = new DataGridViewTextBoxColumn();
-            ProductPrice = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -52,6 +44,14 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
+            Product_ID = new DataGridViewTextBoxColumn();
+            Product_Name = new DataGridViewTextBoxColumn();
+            Product_Inventory = new DataGridViewTextBoxColumn();
+            Product_Price = new DataGridViewTextBoxColumn();
+            Part_ID = new DataGridViewTextBoxColumn();
+            Part_Name = new DataGridViewTextBoxColumn();
+            Part_Inventory = new DataGridViewTextBoxColumn();
+            Part_Price = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -66,7 +66,6 @@
             label1.Size = new Size(366, 29);
             label1.TabIndex = 0;
             label1.Text = "Inventory Management System";
-            label1.Click += label1_Click;
             // 
             // button1
             // 
@@ -89,60 +88,20 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { PartID, PartName, PartInventory, PartPrice });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Part_ID, Part_Name, Part_Inventory, Part_Price });
             dataGridView1.Location = new Point(12, 186);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(443, 150);
             dataGridView1.TabIndex = 3;
             // 
-            // PartID
-            // 
-            PartID.HeaderText = "Part ID";
-            PartID.Name = "PartID";
-            // 
-            // PartName
-            // 
-            PartName.HeaderText = "Part Name";
-            PartName.Name = "PartName";
-            // 
-            // PartInventory
-            // 
-            PartInventory.HeaderText = "Inventory";
-            PartInventory.Name = "PartInventory";
-            // 
-            // PartPrice
-            // 
-            PartPrice.HeaderText = "Price";
-            PartPrice.Name = "PartPrice";
-            // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ProductID, ProductName, ProductInventory, ProductPrice });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Product_ID, Product_Name, Product_Inventory, Product_Price });
             dataGridView2.Location = new Point(644, 186);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(444, 150);
             dataGridView2.TabIndex = 4;
-            // 
-            // ProductID
-            // 
-            ProductID.HeaderText = "Product ID";
-            ProductID.Name = "ProductID";
-            // 
-            // ProductName
-            // 
-            ProductName.HeaderText = "Product Name";
-            ProductName.Name = "ProductName";
-            // 
-            // ProductInventory
-            // 
-            ProductInventory.HeaderText = "Inventory";
-            ProductInventory.Name = "ProductInventory";
-            // 
-            // ProductPrice
-            // 
-            ProductPrice.HeaderText = "Price";
-            ProductPrice.Name = "ProductPrice";
             // 
             // label2
             // 
@@ -249,6 +208,46 @@
             button9.Text = "Exit";
             button9.UseVisualStyleBackColor = true;
             // 
+            // Product_ID
+            // 
+            Product_ID.HeaderText = "Product ID";
+            Product_ID.Name = "Product_ID";
+            // 
+            // Product_Name
+            // 
+            Product_Name.HeaderText = "Product Name";
+            Product_Name.Name = "Product_Name";
+            // 
+            // Product_Inventory
+            // 
+            Product_Inventory.HeaderText = "Inventory";
+            Product_Inventory.Name = "Product_Inventory";
+            // 
+            // Product_Price
+            // 
+            Product_Price.HeaderText = "Price";
+            Product_Price.Name = "Product_Price";
+            // 
+            // Part_ID
+            // 
+            Part_ID.HeaderText = "Part ID";
+            Part_ID.Name = "Part_ID";
+            // 
+            // Part_Name
+            // 
+            Part_Name.HeaderText = "Part Name";
+            Part_Name.Name = "Part_Name";
+            // 
+            // Part_Inventory
+            // 
+            Part_Inventory.HeaderText = "Inventory";
+            Part_Inventory.Name = "Part_Inventory";
+            // 
+            // Part_Price
+            // 
+            Part_Price.HeaderText = "Price";
+            Part_Price.Name = "Part_Price";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -286,15 +285,7 @@
         private Button button1;
         private Button button2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn PartID;
-        private DataGridViewTextBoxColumn PartName;
-        private DataGridViewTextBoxColumn PartInventory;
-        private DataGridViewTextBoxColumn PartPrice;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn ProductID;
-        private DataGridViewTextBoxColumn ProductName;
-        private DataGridViewTextBoxColumn ProductInventory;
-        private DataGridViewTextBoxColumn ProductPrice;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -307,5 +298,13 @@
         private Button button7;
         private Button button8;
         private Button button9;
+        private DataGridViewTextBoxColumn Product_ID;
+        private DataGridViewTextBoxColumn Product_Name;
+        private DataGridViewTextBoxColumn Product_Inventory;
+        private DataGridViewTextBoxColumn Product_Price;
+        private DataGridViewTextBoxColumn Part_ID;
+        private DataGridViewTextBoxColumn Part_Name;
+        private DataGridViewTextBoxColumn Part_Inventory;
+        private DataGridViewTextBoxColumn Part_Price;
     }
 }
