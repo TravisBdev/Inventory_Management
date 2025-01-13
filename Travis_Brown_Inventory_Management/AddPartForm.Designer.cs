@@ -24,8 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             label1 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            rbInHouse = new RadioButton();
+            rbOutSourced = new RadioButton();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -53,27 +53,27 @@
             label1.TabIndex = 0;
             label1.Text = "Add Part";
             // 
-            // radioButton1
+            // rbInHouse
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(116, 9);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(74, 19);
-            radioButton1.TabIndex = 1;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "In-House";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbInHouse.AutoSize = true;
+            rbInHouse.Location = new Point(116, 9);
+            rbInHouse.Name = "rbInHouse";
+            rbInHouse.Size = new Size(74, 19);
+            rbInHouse.TabIndex = 1;
+            rbInHouse.TabStop = true;
+            rbInHouse.Text = "In-House";
+            rbInHouse.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbOutSourced
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(213, 9);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(87, 19);
-            radioButton2.TabIndex = 2;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Outsourced";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbOutSourced.AutoSize = true;
+            rbOutSourced.Location = new Point(213, 9);
+            rbOutSourced.Name = "rbOutSourced";
+            rbOutSourced.Size = new Size(87, 19);
+            rbOutSourced.TabIndex = 2;
+            rbOutSourced.TabStop = true;
+            rbOutSourced.Text = "Outsourced";
+            rbOutSourced.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -233,8 +233,8 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
+            Controls.Add(rbOutSourced);
+            Controls.Add(rbInHouse);
             Controls.Add(label1);
             Name = "AddPartForm";
             Text = "AddPartForm";
@@ -245,8 +245,8 @@
         #endregion
 
         private Label label1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rbInHouse;
+        private RadioButton rbOutSourced;
         private Label label2;
         private Label label3;
         private Label label4;
