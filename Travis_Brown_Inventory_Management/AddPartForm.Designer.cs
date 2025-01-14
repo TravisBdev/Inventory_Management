@@ -26,7 +26,7 @@
             label1 = new Label();
             rbInHouse = new RadioButton();
             rbOutSourced = new RadioButton();
-            label2 = new Label();
+            lblPartInOrOut = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -63,6 +63,7 @@
             rbInHouse.TabStop = true;
             rbInHouse.Text = "In-House";
             rbInHouse.UseVisualStyleBackColor = true;
+            rbInHouse.CheckedChanged += rbInHouse_CheckedChanged;
             // 
             // rbOutSourced
             // 
@@ -74,15 +75,16 @@
             rbOutSourced.TabStop = true;
             rbOutSourced.Text = "Outsourced";
             rbOutSourced.UseVisualStyleBackColor = true;
+            rbOutSourced.CheckedChanged += rbOutSourced_CheckedChanged;
             // 
-            // label2
+            // lblPartInOrOut
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(116, 268);
-            label2.Name = "label2";
-            label2.Size = new Size(94, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Company Name";
+            lblPartInOrOut.AutoSize = true;
+            lblPartInOrOut.Location = new Point(116, 268);
+            lblPartInOrOut.Name = "lblPartInOrOut";
+            lblPartInOrOut.Size = new Size(67, 15);
+            lblPartInOrOut.TabIndex = 3;
+            lblPartInOrOut.Text = "Machine ID";
             // 
             // label3
             // 
@@ -232,7 +234,7 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lblPartInOrOut);
             Controls.Add(rbOutSourced);
             Controls.Add(rbInHouse);
             Controls.Add(label1);
@@ -247,7 +249,7 @@
         private Label label1;
         private RadioButton rbInHouse;
         private RadioButton rbOutSourced;
-        private Label label2;
+        private Label lblPartInOrOut;
         private Label label3;
         private Label label4;
         private Label label5;

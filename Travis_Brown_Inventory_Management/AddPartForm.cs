@@ -14,6 +14,16 @@ namespace Travis_Brown_Inventory_Management {
             InitializeComponent();
         }
 
-        
+        private void rbInHouse_CheckedChanged(object sender, EventArgs e) {
+            if (rbInHouse.Checked) {
+                lblPartInOrOut.Text = "Machine ID";
+            }
+        }
+
+        private void rbOutSourced_CheckedChanged(object sender, EventArgs e) {
+            if (rbOutSourced.Checked) {
+                lblPartInOrOut.Text = "Company Name";
+            }
+        }
     }
 }
