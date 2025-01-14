@@ -42,12 +42,12 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            tbModProdID = new TextBox();
+            tbModProdName = new TextBox();
+            tbModProdInventory = new TextBox();
+            tbModProdPrice = new TextBox();
+            tbModProdMax = new TextBox();
+            tbModProdMin = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvModProdAssociatedList).BeginInit();
             SuspendLayout();
             // 
@@ -204,59 +204,59 @@
             label8.TabIndex = 14;
             label8.Text = "Max";
             // 
-            // textBox1
+            // tbModProdID
             // 
-            textBox1.Location = new Point(108, 139);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 23);
-            textBox1.TabIndex = 15;
+            tbModProdID.Location = new Point(108, 139);
+            tbModProdID.Name = "tbModProdID";
+            tbModProdID.Size = new Size(154, 23);
+            tbModProdID.TabIndex = 15;
             // 
-            // textBox2
+            // tbModProdName
             // 
-            textBox2.Location = new Point(108, 183);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(154, 23);
-            textBox2.TabIndex = 16;
+            tbModProdName.Location = new Point(108, 183);
+            tbModProdName.Name = "tbModProdName";
+            tbModProdName.Size = new Size(154, 23);
+            tbModProdName.TabIndex = 16;
             // 
-            // textBox3
+            // tbModProdInventory
             // 
-            textBox3.Location = new Point(108, 220);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(154, 23);
-            textBox3.TabIndex = 17;
+            tbModProdInventory.Location = new Point(108, 220);
+            tbModProdInventory.Name = "tbModProdInventory";
+            tbModProdInventory.Size = new Size(154, 23);
+            tbModProdInventory.TabIndex = 17;
             // 
-            // textBox4
+            // tbModProdPrice
             // 
-            textBox4.Location = new Point(108, 261);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(154, 23);
-            textBox4.TabIndex = 18;
+            tbModProdPrice.Location = new Point(108, 261);
+            tbModProdPrice.Name = "tbModProdPrice";
+            tbModProdPrice.Size = new Size(154, 23);
+            tbModProdPrice.TabIndex = 18;
             // 
-            // textBox5
+            // tbModProdMax
             // 
-            textBox5.Location = new Point(48, 297);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(78, 23);
-            textBox5.TabIndex = 19;
+            tbModProdMax.Location = new Point(48, 297);
+            tbModProdMax.Name = "tbModProdMax";
+            tbModProdMax.Size = new Size(78, 23);
+            tbModProdMax.TabIndex = 19;
             // 
-            // textBox6
+            // tbModProdMin
             // 
-            textBox6.Location = new Point(240, 297);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(78, 23);
-            textBox6.TabIndex = 20;
+            tbModProdMin.Location = new Point(240, 297);
+            tbModProdMin.Name = "tbModProdMin";
+            tbModProdMin.Size = new Size(78, 23);
+            tbModProdMin.TabIndex = 20;
             // 
             // ModifyProductForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(830, 450);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbModProdMin);
+            Controls.Add(tbModProdMax);
+            Controls.Add(tbModProdPrice);
+            Controls.Add(tbModProdInventory);
+            Controls.Add(tbModProdName);
+            Controls.Add(tbModProdID);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -300,11 +300,11 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox tbModProdID;
+        private TextBox tbModProdName;
+        private TextBox tbModProdInventory;
+        private TextBox tbModProdPrice;
+        private TextBox tbModProdMax;
+        private TextBox tbModProdMin;
     }
 }
