@@ -44,7 +44,7 @@
             label3 = new Label();
             label4 = new Label();
             tbSearchParts = new TextBox();
-            textBox2 = new TextBox();
+            tbSearchProducts = new TextBox();
             btnAddPart = new Button();
             btnDeletePart = new Button();
             btnModifyPart = new Button();
@@ -185,12 +185,13 @@
             tbSearchParts.TabIndex = 8;
             tbSearchParts.TextChanged += tbSearchParts_TextChanged;
             // 
-            // textBox2
+            // tbSearchProducts
             // 
-            textBox2.Location = new Point(884, 143);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(204, 23);
-            textBox2.TabIndex = 9;
+            tbSearchProducts.Location = new Point(884, 143);
+            tbSearchProducts.Name = "tbSearchProducts";
+            tbSearchProducts.Size = new Size(204, 23);
+            tbSearchProducts.TabIndex = 9;
+            tbSearchProducts.TextChanged += tbSearchProducts_TextChanged;
             // 
             // btnAddPart
             // 
@@ -230,6 +231,7 @@
             btnAddProduct.TabIndex = 13;
             btnAddProduct.Text = "Add";
             btnAddProduct.UseVisualStyleBackColor = true;
+            btnAddProduct.Click += btnAddProduct_Click;
             // 
             // btnModifyProduct
             // 
@@ -239,6 +241,7 @@
             btnModifyProduct.TabIndex = 14;
             btnModifyProduct.Text = "Modify";
             btnModifyProduct.UseVisualStyleBackColor = true;
+            btnModifyProduct.Click += btnModifyProduct_Click;
             // 
             // btnDeleteProduct
             // 
@@ -248,6 +251,7 @@
             btnDeleteProduct.TabIndex = 15;
             btnDeleteProduct.Text = "Delete";
             btnDeleteProduct.UseVisualStyleBackColor = true;
+            btnDeleteProduct.Click += btnDeleteProduct_Click;
             // 
             // btnExitMainScreen
             // 
@@ -257,6 +261,7 @@
             btnExitMainScreen.TabIndex = 16;
             btnExitMainScreen.Text = "Exit";
             btnExitMainScreen.UseVisualStyleBackColor = true;
+            btnExitMainScreen.Click += btnExitMainScreen_Click;
             // 
             // Form1
             // 
@@ -270,7 +275,7 @@
             Controls.Add(btnModifyPart);
             Controls.Add(btnDeletePart);
             Controls.Add(btnAddPart);
-            Controls.Add(textBox2);
+            Controls.Add(tbSearchProducts);
             Controls.Add(tbSearchParts);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -301,7 +306,7 @@
         private Label label3;
         private Label label4;
         private TextBox tbSearchParts;
-        private TextBox textBox2;
+        private TextBox tbSearchProducts;
         private Button btnAddPart;
         private Button btnDeletePart;
         private Button btnModifyPart;

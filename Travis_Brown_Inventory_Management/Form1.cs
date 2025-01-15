@@ -87,6 +87,47 @@ namespace Travis_Brown_Inventory_Management
             }
         }
 
-        
+        private void tbSearchProducts_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbSearchProducts.Text)) {
+                dgvProducts.DataSource = Inventory.Products;
+            }
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e) {
+            AddProductForm addProductForm = new();
+            addProductForm.ShowDialog();
+        }
+
+        private void btnModifyProduct_Click(object sender, EventArgs e) {
+            if (dgvProducts.CurrentRow == null) {
+                MessageBox.Show("You must select a product to modify.");
+                return;
+            }
+
+            Product selected = (Product)dgvProducts.CurrentRow.DataBoundItem;
+
+            ModifyProductForm modifyProductForm = new(selected);
+
+            modifyProductForm.ShowDialog();
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e) {
+            if (dgvProducts.CurrentRow == null) {
+                MessageBox.Show("You must select a product to delete.");
+                return;
+            }
+
+            Product selected = (Product)dgvParts.CurrentRow.DataBoundItem;
+
+            var check = MessageBox.Show("Are you sure you want to delete this item?");
+
+            if (check == DialogResult.Yes) {
+                Inventory.Products.Remove(selected);
+            }
+        }
+
+        private void btnExitMainScreen_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }
