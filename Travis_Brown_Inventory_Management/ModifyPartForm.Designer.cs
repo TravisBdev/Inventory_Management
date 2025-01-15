@@ -27,14 +27,14 @@
             rbInHouse = new RadioButton();
             rbOutSourced = new RadioButton();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tbModPartID = new TextBox();
+            tbModPartName = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            tbModPartMax = new TextBox();
+            tbModPartPrice = new TextBox();
+            tbModPartInventory = new TextBox();
+            tbModPartMin = new TextBox();
+            tbModPartInOrOut = new TextBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -84,19 +84,19 @@
             label2.TabIndex = 3;
             label2.Text = "ID";
             // 
-            // textBox1
+            // tbModPartID
             // 
-            textBox1.Location = new Point(125, 54);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(196, 23);
-            textBox1.TabIndex = 4;
+            tbModPartID.Location = new Point(125, 54);
+            tbModPartID.Name = "tbModPartID";
+            tbModPartID.Size = new Size(196, 23);
+            tbModPartID.TabIndex = 4;
             // 
-            // textBox2
+            // tbModPartName
             // 
-            textBox2.Location = new Point(125, 102);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(196, 23);
-            textBox2.TabIndex = 5;
+            tbModPartName.Location = new Point(125, 102);
+            tbModPartName.Name = "tbModPartName";
+            tbModPartName.Size = new Size(196, 23);
+            tbModPartName.TabIndex = 5;
             // 
             // label3
             // 
@@ -107,40 +107,40 @@
             label3.TabIndex = 6;
             label3.Text = "Name";
             // 
-            // textBox3
+            // tbModPartMax
             // 
-            textBox3.Location = new Point(125, 267);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(76, 23);
-            textBox3.TabIndex = 7;
+            tbModPartMax.Location = new Point(125, 267);
+            tbModPartMax.Name = "tbModPartMax";
+            tbModPartMax.Size = new Size(76, 23);
+            tbModPartMax.TabIndex = 7;
             // 
-            // textBox4
+            // tbModPartPrice
             // 
-            textBox4.Location = new Point(125, 204);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(196, 23);
-            textBox4.TabIndex = 8;
+            tbModPartPrice.Location = new Point(125, 204);
+            tbModPartPrice.Name = "tbModPartPrice";
+            tbModPartPrice.Size = new Size(196, 23);
+            tbModPartPrice.TabIndex = 8;
             // 
-            // textBox5
+            // tbModPartInventory
             // 
-            textBox5.Location = new Point(125, 152);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(196, 23);
-            textBox5.TabIndex = 9;
+            tbModPartInventory.Location = new Point(125, 152);
+            tbModPartInventory.Name = "tbModPartInventory";
+            tbModPartInventory.Size = new Size(196, 23);
+            tbModPartInventory.TabIndex = 9;
             // 
-            // textBox6
+            // tbModPartMin
             // 
-            textBox6.Location = new Point(285, 267);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(76, 23);
-            textBox6.TabIndex = 10;
+            tbModPartMin.Location = new Point(285, 267);
+            tbModPartMin.Name = "tbModPartMin";
+            tbModPartMin.Size = new Size(76, 23);
+            tbModPartMin.TabIndex = 10;
             // 
-            // textBox7
+            // tbModPartInOrOut
             // 
-            textBox7.Location = new Point(143, 319);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(196, 23);
-            textBox7.TabIndex = 11;
+            tbModPartInOrOut.Location = new Point(143, 319);
+            tbModPartInOrOut.Name = "tbModPartInOrOut";
+            tbModPartInOrOut.Size = new Size(196, 23);
+            tbModPartInOrOut.TabIndex = 11;
             // 
             // label4
             // 
@@ -197,14 +197,14 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(tbModPartInOrOut);
+            Controls.Add(tbModPartMin);
+            Controls.Add(tbModPartInventory);
+            Controls.Add(tbModPartPrice);
+            Controls.Add(tbModPartMax);
             Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbModPartName);
+            Controls.Add(tbModPartID);
             Controls.Add(label2);
             Controls.Add(rbOutSourced);
             Controls.Add(rbInHouse);
@@ -221,14 +221,14 @@
         private RadioButton rbInHouse;
         private RadioButton rbOutSourced;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbModPartID;
+        private TextBox tbModPartName;
         private Label label3;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox tbModPartMax;
+        private TextBox tbModPartPrice;
+        private TextBox tbModPartInventory;
+        private TextBox tbModPartMin;
+        private TextBox tbModPartInOrOut;
         private Label label4;
         private Label label5;
         private Label label6;

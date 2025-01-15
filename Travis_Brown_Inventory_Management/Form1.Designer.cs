@@ -43,7 +43,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
+            tbSearchParts = new TextBox();
             textBox2 = new TextBox();
             btnAddPart = new Button();
             btnDeletePart = new Button();
@@ -75,6 +75,7 @@
             btnSearchPart.TabIndex = 1;
             btnSearchPart.Text = "Search";
             btnSearchPart.UseVisualStyleBackColor = true;
+            btnSearchPart.Click += btnSearchPart_Click;
             // 
             // btnSearchProduct
             // 
@@ -84,6 +85,7 @@
             btnSearchProduct.TabIndex = 2;
             btnSearchProduct.Text = "Search";
             btnSearchProduct.UseVisualStyleBackColor = true;
+            btnSearchProduct.Click += btnSearchProduct_Click;
             // 
             // dgvParts
             // 
@@ -175,12 +177,13 @@
             label4.Size = new Size(0, 15);
             label4.TabIndex = 7;
             // 
-            // textBox1
+            // tbSearchParts
             // 
-            textBox1.Location = new Point(251, 142);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(204, 23);
-            textBox1.TabIndex = 8;
+            tbSearchParts.Location = new Point(251, 142);
+            tbSearchParts.Name = "tbSearchParts";
+            tbSearchParts.Size = new Size(204, 23);
+            tbSearchParts.TabIndex = 8;
+            tbSearchParts.TextChanged += tbSearchParts_TextChanged;
             // 
             // textBox2
             // 
@@ -197,6 +200,7 @@
             btnAddPart.TabIndex = 10;
             btnAddPart.Text = "Add";
             btnAddPart.UseVisualStyleBackColor = true;
+            btnAddPart.Click += btnAddPart_Click;
             // 
             // btnDeletePart
             // 
@@ -206,6 +210,7 @@
             btnDeletePart.TabIndex = 11;
             btnDeletePart.Text = "Delete";
             btnDeletePart.UseVisualStyleBackColor = true;
+            btnDeletePart.Click += btnDeletePart_Click;
             // 
             // btnModifyPart
             // 
@@ -215,6 +220,7 @@
             btnModifyPart.TabIndex = 12;
             btnModifyPart.Text = "Modify";
             btnModifyPart.UseVisualStyleBackColor = true;
+            btnModifyPart.Click += btnModifyPart_Click;
             // 
             // btnAddProduct
             // 
@@ -265,7 +271,7 @@
             Controls.Add(btnDeletePart);
             Controls.Add(btnAddPart);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbSearchParts);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -277,6 +283,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Screen";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgvParts).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ResumeLayout(false);
@@ -293,7 +300,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox tbSearchParts;
         private TextBox textBox2;
         private Button btnAddPart;
         private Button btnDeletePart;
