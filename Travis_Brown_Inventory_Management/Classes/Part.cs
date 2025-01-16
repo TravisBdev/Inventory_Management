@@ -12,16 +12,5 @@ namespace Travis_Brown_Inventory_Management.Classes {
         public int InStock { get; set; }
         public int Min { get; set; }
         public int Max { get; set; }
-
-        //I may or may not need this constructor (probably not because of manual entry) Just in case though.
-
-        //public Part(int partID, string name, decimal price, int inStock, int min, int max) {
-        //    PartID = partID;
-        //    Name = name;
-        //    Price = price;
-        //    InStock = inStock;
-        //    Min = min;
-        //    Max = max;
-        //}
     }
 }

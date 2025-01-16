@@ -40,6 +40,8 @@
             label6 = new Label();
             label7 = new Label();
             lblModifyInOrOut = new Label();
+            btnModPartCancel = new Button();
+            btnModPartSave = new Button();
             SuspendLayout();
             // 
             // label1
@@ -187,11 +189,32 @@
             lblModifyInOrOut.TabIndex = 16;
             lblModifyInOrOut.Text = "Machine ID";
             // 
+            // btnModPartCancel
+            // 
+            btnModPartCancel.Location = new Point(438, 521);
+            btnModPartCancel.Name = "btnModPartCancel";
+            btnModPartCancel.Size = new Size(75, 23);
+            btnModPartCancel.TabIndex = 17;
+            btnModPartCancel.Text = "Cancel";
+            btnModPartCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnModPartSave
+            // 
+            btnModPartSave.Location = new Point(357, 521);
+            btnModPartSave.Name = "btnModPartSave";
+            btnModPartSave.Size = new Size(75, 23);
+            btnModPartSave.TabIndex = 18;
+            btnModPartSave.Text = "Save";
+            btnModPartSave.UseVisualStyleBackColor = true;
+            btnModPartSave.Click += btnModPartSave_Click;
+            // 
             // ModifyPartForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(525, 556);
+            Controls.Add(btnModPartSave);
+            Controls.Add(btnModPartCancel);
             Controls.Add(lblModifyInOrOut);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -234,5 +257,7 @@
         private Label label6;
         private Label label7;
         private Label lblModifyInOrOut;
+        private Button btnModPartCancel;
+        private Button btnModPartSave;
     }
 }

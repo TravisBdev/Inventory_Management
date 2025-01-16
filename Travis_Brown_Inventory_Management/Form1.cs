@@ -20,8 +20,8 @@ namespace Travis_Brown_Inventory_Management
                 Part part = Inventory.lookupPart(partId);
 
                 if (part != null) {
-                    var searchResults = new BindingList<Part>();
-                    searchResults.Add(part);
+                    var res = new BindingList<Part> { part };
+                    dgvParts.DataSource = res;
                 } else {
                     MessageBox.Show("Sorry, this part could not be found.");
                 }
