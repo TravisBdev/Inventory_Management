@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Travis_Brown_Inventory_Management.Classes {
     public static class Inventory {
-        public static BindingList<Product> Products { get; set; } = [];
-        public static BindingList<Part> AllParts { get; set; } = [];
+        public static BindingList<Product> Products { get; set; } = new BindingList<Product>();
+        public static BindingList<Part> AllParts { get; set; } = new BindingList<Part>();
 
         public static void addProduct(Product product) => Products.Add(product);
 

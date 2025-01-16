@@ -62,7 +62,12 @@ namespace Travis_Brown_Inventory_Management
 
             Part selected = (Part)dgvParts.CurrentRow.DataBoundItem;
 
-            var check = MessageBox.Show("Are you sure you want to delete this item?");
+            var check = MessageBox.Show(
+                "Are you sure you want to delete this item?",
+                "Please Confirm",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+                );
 
             if (check == DialogResult.Yes) {
                 Inventory.AllParts.Remove(selected);
@@ -119,7 +124,12 @@ namespace Travis_Brown_Inventory_Management
 
             Product selected = (Product)dgvParts.CurrentRow.DataBoundItem;
 
-            var check = MessageBox.Show("Are you sure you want to delete this item?");
+            var check = MessageBox.Show(
+                "Are you sure you want to delete this item?",
+                "Please Confirm",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+                );
 
             if (check == DialogResult.Yes) {
                 Inventory.Products.Remove(selected);
@@ -127,7 +137,7 @@ namespace Travis_Brown_Inventory_Management
         }
 
         private void btnExitMainScreen_Click(object sender, EventArgs e) {
-            this.Close();
+            this.Close();   
         }
     }
 }

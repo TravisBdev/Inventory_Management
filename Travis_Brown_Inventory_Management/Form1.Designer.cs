@@ -31,10 +31,6 @@
             btnSearchPart = new Button();
             btnSearchProduct = new Button();
             dgvParts = new DataGridView();
-            Part_ID = new DataGridViewTextBoxColumn();
-            Part_Name = new DataGridViewTextBoxColumn();
-            Part_Inventory = new DataGridViewTextBoxColumn();
-            Part_Price = new DataGridViewTextBoxColumn();
             dgvProducts = new DataGridView();
             Product_ID = new DataGridViewTextBoxColumn();
             Product_Name = new DataGridViewTextBoxColumn();
@@ -52,6 +48,10 @@
             btnModifyProduct = new Button();
             btnDeleteProduct = new Button();
             btnExitMainScreen = new Button();
+            Part_ID = new DataGridViewTextBoxColumn();
+            Part_Name = new DataGridViewTextBoxColumn();
+            Part_Inventory = new DataGridViewTextBoxColumn();
+            Part_Price = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvParts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
@@ -97,26 +97,6 @@
             dgvParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvParts.Size = new Size(443, 150);
             dgvParts.TabIndex = 3;
-            // 
-            // Part_ID
-            // 
-            Part_ID.HeaderText = "Part ID";
-            Part_ID.Name = "Part_ID";
-            // 
-            // Part_Name
-            // 
-            Part_Name.HeaderText = "Part Name";
-            Part_Name.Name = "Part_Name";
-            // 
-            // Part_Inventory
-            // 
-            Part_Inventory.HeaderText = "Inventory";
-            Part_Inventory.Name = "Part_Inventory";
-            // 
-            // Part_Price
-            // 
-            Part_Price.HeaderText = "Price";
-            Part_Price.Name = "Part_Price";
             // 
             // dgvProducts
             // 
@@ -262,6 +242,30 @@
             btnExitMainScreen.Text = "Exit";
             btnExitMainScreen.UseVisualStyleBackColor = true;
             btnExitMainScreen.Click += btnExitMainScreen_Click;
+            // 
+            // Part_ID
+            // 
+            Part_ID.DataPropertyName = "PartID";
+            Part_ID.HeaderText = "Part ID";
+            Part_ID.Name = "Part_ID";
+            // 
+            // Part_Name
+            // 
+            Part_Name.DataPropertyName = "Name";
+            Part_Name.HeaderText = "Part Name";
+            Part_Name.Name = "Part_Name";
+            // 
+            // Part_Inventory
+            // 
+            Part_Inventory.DataPropertyName = "InStock";
+            Part_Inventory.HeaderText = "Inventory";
+            Part_Inventory.Name = "Part_Inventory";
+            // 
+            // Part_Price
+            // 
+            Part_Price.DataPropertyName = "Price";
+            Part_Price.HeaderText = "Price";
+            Part_Price.Name = "Part_Price";
             // 
             // Form1
             // 

@@ -35,7 +35,7 @@
             label8 = new Label();
             btnSavePart = new Button();
             btnCancelPart = new Button();
-            tbPartCompanyName = new TextBox();
+            tbPartInOrOut = new TextBox();
             tbPartMax = new TextBox();
             tbPartID = new TextBox();
             tbPartInventory = new TextBox();
@@ -148,6 +148,7 @@
             btnSavePart.TabIndex = 10;
             btnSavePart.Text = "Save";
             btnSavePart.UseVisualStyleBackColor = true;
+            btnSavePart.Click += btnSavePart_Click;
             // 
             // btnCancelPart
             // 
@@ -157,14 +158,15 @@
             btnCancelPart.TabIndex = 11;
             btnCancelPart.Text = "Cancel";
             btnCancelPart.UseVisualStyleBackColor = true;
+            btnCancelPart.Click += btnCancelPart_Click;
             // 
-            // tbPartCompanyName
+            // tbPartInOrOut
             // 
-            tbPartCompanyName.Location = new Point(227, 260);
-            tbPartCompanyName.Multiline = true;
-            tbPartCompanyName.Name = "tbPartCompanyName";
-            tbPartCompanyName.Size = new Size(139, 23);
-            tbPartCompanyName.TabIndex = 12;
+            tbPartInOrOut.Location = new Point(227, 260);
+            tbPartInOrOut.Multiline = true;
+            tbPartInOrOut.Name = "tbPartInOrOut";
+            tbPartInOrOut.Size = new Size(139, 23);
+            tbPartInOrOut.TabIndex = 12;
             // 
             // tbPartMax
             // 
@@ -225,7 +227,7 @@
             Controls.Add(tbPartInventory);
             Controls.Add(tbPartID);
             Controls.Add(tbPartMax);
-            Controls.Add(tbPartCompanyName);
+            Controls.Add(tbPartInOrOut);
             Controls.Add(btnCancelPart);
             Controls.Add(btnSavePart);
             Controls.Add(label8);
@@ -258,7 +260,7 @@
         private Label label8;
         private Button btnSavePart;
         private Button btnCancelPart;
-        private TextBox tbPartCompanyName;
+        private TextBox tbPartInOrOut;
         private TextBox tbPartMax;
         private TextBox tbPartID;
         private TextBox tbPartInventory;
