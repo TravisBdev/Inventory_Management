@@ -19,6 +19,10 @@ namespace Travis_Brown_Inventory_Management {
         private void AddProductForm_Load(object sender, EventArgs e) {
             dgvAddProdPartsList.DataSource = Inventory.AllParts;
             dgvAddProdAssociatedList.DataSource = newProduct.AssociatedParts;
+            dgvAddProdPartsList.ClearSelection();
+            dgvAddProdPartsList.CurrentCell = null;
+            dgvAddProdAssociatedList.ClearSelection();
+            dgvAddProdAssociatedList.CurrentCell = null;
         }
 
         //Live Validation
@@ -105,6 +109,7 @@ namespace Travis_Brown_Inventory_Management {
 
             if(newProduct.AssociatedParts.Count == 0) {
                 MessageBox.Show("You must select at least one associated part.");
+                return;
             }
 
             try {

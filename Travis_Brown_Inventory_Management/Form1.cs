@@ -10,6 +10,10 @@ namespace Travis_Brown_Inventory_Management
         private void Form1_Load(object sender, EventArgs e) {
             dgvParts.DataSource = Inventory.AllParts;
             dgvProducts.DataSource = Inventory.Products;
+            dgvParts.ClearSelection();
+            dgvParts.CurrentCell = null;
+            dgvProducts.ClearSelection();
+            dgvProducts.CurrentCell = null;
         }
 
         //Code for parts
