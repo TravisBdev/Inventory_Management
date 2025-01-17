@@ -197,6 +197,7 @@
             btnModPartCancel.TabIndex = 17;
             btnModPartCancel.Text = "Cancel";
             btnModPartCancel.UseVisualStyleBackColor = true;
+            btnModPartCancel.Click += btnModPartCancel_Click;
             // 
             // btnModPartSave
             // 

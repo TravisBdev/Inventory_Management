@@ -109,7 +109,7 @@ namespace Travis_Brown_Inventory_Management {
                     };
                 }
 
-                Inventory.AllParts.Add(partToAdd);
+                Inventory.addPart(partToAdd);
                 this.Close();
 
             } catch (Exception ex) {

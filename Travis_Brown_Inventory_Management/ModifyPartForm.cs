@@ -78,7 +78,7 @@ namespace Travis_Brown_Inventory_Management {
         }
 
         private void btnModPartSave_Click(object sender, EventArgs e) {
-            if(!ValidateFields()) {
+            if (!ValidateFields()) {
                 MessageBox.Show("Please fill out all fields.");
                 return;
             }
@@ -90,13 +90,13 @@ namespace Travis_Brown_Inventory_Management {
                 int min = int.Parse(tbModPartMin.Text);
                 int max = int.Parse(tbModPartMax.Text);
 
-                if(min > max || inventory < min || inventory > max) {
+                if (min > max || inventory < min || inventory > max) {
                     MessageBox.Show("Min cannot be greater than max. Inventory must be between min and max.");
                     return;
                 }
 
                 Part toUpdate;
-                if(rbInHouse.Checked) {
+                if (rbInHouse.Checked) {
                     toUpdate = new InHouse {
                         PartID = selected.PartID,
                         Name = name,
@@ -106,7 +106,7 @@ namespace Travis_Brown_Inventory_Management {
                         Max = max,
                         MachineID = int.Parse(tbModPartInOrOut.Text)
                     };
-                }else {
+                } else {
                     toUpdate = new Outsourced {
                         PartID = selected.PartID,
                         Name = name,
@@ -123,6 +123,14 @@ namespace Travis_Brown_Inventory_Management {
 
             } catch (Exception ex) {
                 MessageBox.Show($"Please double check your values {ex.Message}");
+            }
+        }
+
+        private void btnModPartCancel_Click(object sender, EventArgs e) {
+            var res = MessageBox.Show("Are you sure you want to cancel?");
+
+            if (res == DialogResult.OK) {
+                this.Close();
             }
         }
     }

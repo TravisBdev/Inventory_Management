@@ -70,7 +70,7 @@ namespace Travis_Brown_Inventory_Management
                 );
 
             if (check == DialogResult.Yes) {
-                Inventory.AllParts.Remove(selected);
+                Inventory.deletePart(selected);
             }
         }
 
