@@ -103,6 +103,10 @@ namespace Travis_Brown_Inventory_Management {
                 return;
             }
 
+            if(newProduct.AssociatedParts.Count == 0) {
+                MessageBox.Show("You must select at least one associated part.");
+            }
+
             try {
                 newProduct.Name = tbAddProdName.Text;
                 newProduct.InStock = int.Parse(tbAddProdInventory.Text);
@@ -128,6 +132,43 @@ namespace Travis_Brown_Inventory_Management {
             if (res == DialogResult.OK) {
                 this.Close();
             }
+        }
+
+        private void btnSearchAddProduct_Click(object sender, EventArgs e) {
+            //int partId;
+
+            //if (int.TryParse(tbAddProdSearch.Text, out partId)) {
+            //    Part part = Inventory.lookupPart(partId);
+
+            //    if (part != null) {
+            //        var res = new BindingList<Part> { part };
+            //        dgvAddProdPartsList.DataSource = res;
+            //    } else {
+            //        MessageBox.Show("Sorry, this part could not be found.");
+            //    }
+            //} else {
+            //    MessageBox.Show("Please enter a valid part ID.");
+            //}
+        }
+
+        private void tbAddProdSearch_TextChanged(object sender, EventArgs e) {
+            //if (string.IsNullOrWhiteSpace(tbAddProdSearch.Text)) {
+            //    dgvAddProdPartsList.DataSource = Inventory.AllParts;
+            //}
+        }
+
+        private void btnAddPart_Click(object sender, EventArgs e) {
+            if(dgvAddProdPartsList.CurrentRow == null) {
+                MessageBox.Show("Please select a part.");
+            }
+
+            Part selected = (Part)dgvAddProdPartsList.CurrentRow.DataBoundItem;
+
+            if(newProduct.AssociatedParts.Contains(selected)) {
+                MessageBox.Show("Please choose a different part that is not already associated.");
+            }
+
+            newProduct.addAssociatedPart(selected);
         }
     }
 }

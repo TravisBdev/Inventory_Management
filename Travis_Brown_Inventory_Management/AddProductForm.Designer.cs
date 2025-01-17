@@ -77,6 +77,7 @@
             btnSearchAddProduct.TabIndex = 1;
             btnSearchAddProduct.Text = "Search";
             btnSearchAddProduct.UseVisualStyleBackColor = true;
+            btnSearchAddProduct.Click += btnSearchAddProduct_Click;
             // 
             // tbAddProdSearch
             // 
@@ -84,6 +85,7 @@
             tbAddProdSearch.Name = "tbAddProdSearch";
             tbAddProdSearch.Size = new Size(196, 23);
             tbAddProdSearch.TabIndex = 2;
+            tbAddProdSearch.TextChanged += tbAddProdSearch_TextChanged;
             // 
             // label2
             // 
@@ -107,21 +109,25 @@
             // 
             // Part_ID
             // 
+            Part_ID.DataPropertyName = "PartID";
             Part_ID.HeaderText = "Part ID";
             Part_ID.Name = "Part_ID";
             // 
             // Part_Name
             // 
+            Part_Name.DataPropertyName = "Name";
             Part_Name.HeaderText = "Part Name";
             Part_Name.Name = "Part_Name";
             // 
             // Part_Inventory
             // 
+            Part_Inventory.DataPropertyName = "InStock";
             Part_Inventory.HeaderText = "Inventory";
             Part_Inventory.Name = "Part_Inventory";
             // 
             // Part_Price
             // 
+            Part_Price.DataPropertyName = "Price";
             Part_Price.HeaderText = "Price";
             Part_Price.Name = "Part_Price";
             // 
@@ -133,6 +139,7 @@
             btnAddPart.TabIndex = 5;
             btnAddPart.Text = "Add";
             btnAddPart.UseVisualStyleBackColor = true;
+            btnAddPart.Click += btnAddPart_Click;
             // 
             // dgvAddProdAssociatedList
             // 
@@ -147,21 +154,25 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "PartID";
             dataGridViewTextBoxColumn1.HeaderText = "Part ID";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "Name";
             dataGridViewTextBoxColumn2.HeaderText = "Part Name";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "InStock";
             dataGridViewTextBoxColumn3.HeaderText = "Inventory";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
+            dataGridViewTextBoxColumn4.DataPropertyName = "Price";
             dataGridViewTextBoxColumn4.HeaderText = "Price";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
@@ -349,16 +360,8 @@
         private TextBox tbAddProdSearch;
         private Label label2;
         private DataGridView dgvAddProdPartsList;
-        private DataGridViewTextBoxColumn Part_ID;
-        private DataGridViewTextBoxColumn Part_Name;
-        private DataGridViewTextBoxColumn Part_Inventory;
-        private DataGridViewTextBoxColumn Part_Price;
         private Button btnAddPart;
         private DataGridView dgvAddProdAssociatedList;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button btnDeletePart;
         private Label label3;
         private Label label4;
@@ -376,5 +379,13 @@
         private Button btnAddProdCancel;
         private Label label9;
         private ToolTip toolTip1;
+        private DataGridViewTextBoxColumn Part_ID;
+        private DataGridViewTextBoxColumn Part_Name;
+        private DataGridViewTextBoxColumn Part_Inventory;
+        private DataGridViewTextBoxColumn Part_Price;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
