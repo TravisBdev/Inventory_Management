@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             btnSearchAddProduct = new Button();
             tbAddProdSearch = new TextBox();
@@ -54,6 +55,7 @@
             btnAddProdSave = new Button();
             btnAddProdCancel = new Button();
             label9 = new Label();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dgvAddProdPartsList).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAddProdAssociatedList).BeginInit();
             SuspendLayout();
@@ -228,6 +230,7 @@
             // 
             // tbAddProdID
             // 
+            tbAddProdID.Enabled = false;
             tbAddProdID.Location = new Point(80, 159);
             tbAddProdID.Name = "tbAddProdID";
             tbAddProdID.Size = new Size(196, 23);
@@ -239,6 +242,7 @@
             tbAddProdName.Name = "tbAddProdName";
             tbAddProdName.Size = new Size(196, 23);
             tbAddProdName.TabIndex = 15;
+            tbAddProdName.TextChanged += tbAddProdName_TextChanged;
             // 
             // tbAddProdInventory
             // 
@@ -246,6 +250,7 @@
             tbAddProdInventory.Name = "tbAddProdInventory";
             tbAddProdInventory.Size = new Size(196, 23);
             tbAddProdInventory.TabIndex = 16;
+            tbAddProdInventory.TextChanged += tbAddProdInventory_TextChanged;
             // 
             // tbAddProdPrice
             // 
@@ -253,6 +258,7 @@
             tbAddProdPrice.Name = "tbAddProdPrice";
             tbAddProdPrice.Size = new Size(196, 23);
             tbAddProdPrice.TabIndex = 17;
+            tbAddProdPrice.TextChanged += tbAddProdPrice_TextChanged;
             // 
             // tbAddProdMax
             // 
@@ -260,6 +266,7 @@
             tbAddProdMax.Name = "tbAddProdMax";
             tbAddProdMax.Size = new Size(63, 23);
             tbAddProdMax.TabIndex = 18;
+            tbAddProdMax.TextChanged += tbAddProdMax_TextChanged;
             // 
             // tbAddProdMin
             // 
@@ -267,6 +274,7 @@
             tbAddProdMin.Name = "tbAddProdMin";
             tbAddProdMin.Size = new Size(63, 23);
             tbAddProdMin.TabIndex = 19;
+            tbAddProdMin.TextChanged += tbAddProdMin_TextChanged;
             // 
             // btnAddProdSave
             // 
@@ -276,6 +284,7 @@
             btnAddProdSave.TabIndex = 20;
             btnAddProdSave.Text = "Save";
             btnAddProdSave.UseVisualStyleBackColor = true;
+            btnAddProdSave.Click += btnAddProdSave_Click;
             // 
             // btnAddProdCancel
             // 
@@ -285,6 +294,7 @@
             btnAddProdCancel.TabIndex = 21;
             btnAddProdCancel.Text = "Cancel";
             btnAddProdCancel.UseVisualStyleBackColor = true;
+            btnAddProdCancel.Click += btnAddProdCancel_Click;
             // 
             // label9
             // 
@@ -325,6 +335,7 @@
             Controls.Add(label1);
             Name = "AddProductForm";
             Text = "AddProductForm";
+            Load += AddProductForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAddProdPartsList).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvAddProdAssociatedList).EndInit();
             ResumeLayout(false);
@@ -364,5 +375,6 @@
         private Button btnAddProdSave;
         private Button btnAddProdCancel;
         private Label label9;
+        private ToolTip toolTip1;
     }
 }
