@@ -52,32 +52,40 @@ namespace Travis_Brown_Inventory_Management {
         private void tbPartInventory_TextChanged(object sender, EventArgs e) {
             if (string.IsNullOrWhiteSpace(tbPartInventory.Text) || !int.TryParse(tbPartInventory.Text, out _)) {
                 tbPartInventory.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a number", tbPartInventory, 1500);
             } else {
                 tbPartInventory.BackColor = Color.White;
+                tooltip.Hide(tbPartInventory);
             }
         }
 
         private void tbPartPrice_TextChanged(object sender, EventArgs e) {
             if (string.IsNullOrWhiteSpace(tbPartPrice.Text) || !decimal.TryParse(tbPartPrice.Text, out _)) {
                 tbPartPrice.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a decimal", tbPartPrice, 1500);
             } else {
                 tbPartPrice.BackColor = Color.White;
+                tooltip.Hide(tbPartPrice);
             }
         }
 
         private void tbPartMax_TextChanged(object sender, EventArgs e) {
             if (string.IsNullOrWhiteSpace(tbPartMax.Text) || !int.TryParse(tbPartMax.Text, out _)) {
                 tbPartMax.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a number", tbPartMax, 1500);
             } else {
                 tbPartMax.BackColor = Color.White;
+                tooltip.Hide(tbPartMax);
             }
         }
 
         private void tbPartMin_TextChanged(object sender, EventArgs e) {
             if (string.IsNullOrWhiteSpace(tbPartMin.Text) || !int.TryParse(tbPartMin.Text, out _)) {
                 tbPartMin.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a number", tbPartMin, 1500);
             } else {
                 tbPartMin.BackColor = Color.White;
+                tooltip.Hide(tbPartMin);
             }
         }
 
@@ -85,14 +93,18 @@ namespace Travis_Brown_Inventory_Management {
             if (rbInHouse.Checked) {
                 if (string.IsNullOrWhiteSpace(tbPartInOrOut.Text) || !int.TryParse(tbPartInOrOut.Text, out _)) {
                     tbPartInOrOut.BackColor = Color.Red;
+                    tooltip.Show("Value required - must be a number", tbPartInOrOut, 1500);
                 } else {
                     tbPartInOrOut.BackColor = Color.White;
+                    tooltip.Hide(tbPartInOrOut);
                 }
             } else if (rbOutSourced.Checked) {
-                if (string.IsNullOrWhiteSpace(tbPartInOrOut.Text)) {
+                if (string.IsNullOrWhiteSpace(tbPartInOrOut.Text) || tbPartInOrOut.Text.Any(char.IsDigit)) {
                     tbPartInOrOut.BackColor = Color.Red;
+                    tooltip.Show("Value required - must be a string", tbPartInOrOut, 1500);
                 } else {
                     tbPartInOrOut.BackColor = Color.White;
+                    tooltip.Hide(tbPartInOrOut);
                 }
             }
         }
