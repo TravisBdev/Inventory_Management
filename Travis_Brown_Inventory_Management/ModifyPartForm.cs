@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Travis_Brown_Inventory_Management.Classes;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Travis_Brown_Inventory_Management {
     public partial class ModifyPartForm : Form {
@@ -45,6 +44,80 @@ namespace Travis_Brown_Inventory_Management {
             }
         }
 
+
+        //Live Validation
+        private ToolTip tooltip = new();
+        private void tbModPartName_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbModPartName.Text) || tbModPartName.Text.Any(char.IsDigit)) {
+                tbModPartName.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a string", tbModPartName, 1500);
+            } else {
+                tbModPartName.BackColor = Color.White;
+                tooltip.Hide(tbModPartName);
+            }
+        }
+
+        private void tbModPartInventory_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbModPartInventory.Text) || !int.TryParse(tbModPartInventory.Text, out _)) {
+                tbModPartInventory.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a number", tbModPartInventory, 1500);
+            } else {
+                tbModPartInventory.BackColor = Color.White;
+                tooltip.Hide(tbModPartInventory);
+            }
+        }
+
+        private void tbModPartPrice_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbModPartPrice.Text) || !decimal.TryParse(tbModPartPrice.Text, out _)) {
+                tbModPartPrice.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a decimal", tbModPartPrice, 1500);
+            } else {
+                tbModPartPrice.BackColor = Color.White;
+                tooltip.Hide(tbModPartPrice);
+            }
+        }
+
+        private void tbModPartMax_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbModPartMax.Text) || !int.TryParse(tbModPartMax.Text, out _)) {
+                tbModPartMax.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a number", tbModPartMax, 1500);
+            } else {
+                tbModPartMax.BackColor = Color.White;
+                tooltip.Hide(tbModPartMax);
+            }
+        }
+
+        private void tbModPartMin_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbModPartMin.Text) || !int.TryParse(tbModPartMin.Text, out _)) {
+                tbModPartMin.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a number", tbModPartMin, 1500);
+            } else {
+                tbModPartMin.BackColor = Color.White;
+                tooltip.Hide(tbModPartMin);
+            }
+        }
+
+        private void tbModPartInOrOut_TextChanged(object sender, EventArgs e) {
+            if (rbInHouse.Checked) {
+                if (string.IsNullOrWhiteSpace(tbModPartInOrOut.Text) || !int.TryParse(tbModPartInOrOut.Text, out _)) {
+                    tbModPartInOrOut.BackColor = Color.Red;
+                    tooltip.Show("Value required - must be a number", tbModPartInOrOut, 1500);
+                } else {
+                    tbModPartInOrOut.BackColor = Color.White;
+                    tooltip.Hide(tbModPartInOrOut);
+                }
+            } else if (rbOutSourced.Checked) {
+                if (string.IsNullOrWhiteSpace(tbModPartInOrOut.Text) || tbModPartInOrOut.Text.Any(char.IsDigit)) {
+                    tbModPartInOrOut.BackColor = Color.Red;
+                    tooltip.Show("Value required - must be a string", tbModPartInOrOut, 1500);
+                } else {
+                    tbModPartInOrOut.BackColor = Color.White;
+                    tooltip.Hide(tbModPartInOrOut);
+                }
+            }
+        }
+
+        //Save Validation
         private bool Validate(TextBox tb) {
             if (string.IsNullOrWhiteSpace(tb.Text)) {
                 tb.BackColor = Color.Red;

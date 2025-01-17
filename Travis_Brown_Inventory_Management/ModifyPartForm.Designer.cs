@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             rbInHouse = new RadioButton();
             rbOutSourced = new RadioButton();
@@ -42,6 +43,7 @@
             lblModifyInOrOut = new Label();
             btnModPartCancel = new Button();
             btnModPartSave = new Button();
+            toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
             // label1
@@ -99,6 +101,7 @@
             tbModPartName.Name = "tbModPartName";
             tbModPartName.Size = new Size(196, 23);
             tbModPartName.TabIndex = 5;
+            tbModPartName.TextChanged += tbModPartName_TextChanged;
             // 
             // label3
             // 
@@ -115,6 +118,7 @@
             tbModPartMax.Name = "tbModPartMax";
             tbModPartMax.Size = new Size(76, 23);
             tbModPartMax.TabIndex = 7;
+            tbModPartMax.TextChanged += tbModPartMax_TextChanged;
             // 
             // tbModPartPrice
             // 
@@ -122,6 +126,7 @@
             tbModPartPrice.Name = "tbModPartPrice";
             tbModPartPrice.Size = new Size(196, 23);
             tbModPartPrice.TabIndex = 8;
+            tbModPartPrice.TextChanged += tbModPartPrice_TextChanged;
             // 
             // tbModPartInventory
             // 
@@ -129,6 +134,7 @@
             tbModPartInventory.Name = "tbModPartInventory";
             tbModPartInventory.Size = new Size(196, 23);
             tbModPartInventory.TabIndex = 9;
+            tbModPartInventory.TextChanged += tbModPartInventory_TextChanged;
             // 
             // tbModPartMin
             // 
@@ -136,6 +142,7 @@
             tbModPartMin.Name = "tbModPartMin";
             tbModPartMin.Size = new Size(76, 23);
             tbModPartMin.TabIndex = 10;
+            tbModPartMin.TextChanged += tbModPartMin_TextChanged;
             // 
             // tbModPartInOrOut
             // 
@@ -143,6 +150,7 @@
             tbModPartInOrOut.Name = "tbModPartInOrOut";
             tbModPartInOrOut.Size = new Size(196, 23);
             tbModPartInOrOut.TabIndex = 11;
+            tbModPartInOrOut.TextChanged += tbModPartInOrOut_TextChanged;
             // 
             // label4
             // 
@@ -260,5 +268,6 @@
         private Label lblModifyInOrOut;
         private Button btnModPartCancel;
         private Button btnModPartSave;
+        private ToolTip toolTip1;
     }
 }
