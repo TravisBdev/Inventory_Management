@@ -27,6 +27,77 @@ namespace Travis_Brown_Inventory_Management {
             }
         }
 
+        //Live Validation
+        private ToolTip tooltip = new();
+        private void tbPartID_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbPartID.Text) || !int.TryParse(tbPartID.Text, out _)) {
+                tbPartID.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a number.", tbPartID, 1500);
+            } else {
+                tbPartID.BackColor = Color.White;
+                tooltip.Hide(tbPartID);
+            }
+        }
+
+        private void tbPartName_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbPartName.Text) || tbPartName.Text.Any(char.IsDigit)) {
+                tbPartName.BackColor = Color.Red;
+                tooltip.Show("Value required - must be a string", tbPartName, 1500);
+            } else {
+                tbPartName.BackColor = Color.White;
+                tooltip.Hide(tbPartName);
+            }
+        }
+
+        private void tbPartInventory_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbPartInventory.Text) || !int.TryParse(tbPartInventory.Text, out _)) {
+                tbPartInventory.BackColor = Color.Red;
+            } else {
+                tbPartInventory.BackColor = Color.White;
+            }
+        }
+
+        private void tbPartPrice_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbPartPrice.Text) || !decimal.TryParse(tbPartPrice.Text, out _)) {
+                tbPartPrice.BackColor = Color.Red;
+            } else {
+                tbPartPrice.BackColor = Color.White;
+            }
+        }
+
+        private void tbPartMax_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbPartMax.Text) || !int.TryParse(tbPartMax.Text, out _)) {
+                tbPartMax.BackColor = Color.Red;
+            } else {
+                tbPartMax.BackColor = Color.White;
+            }
+        }
+
+        private void tbPartMin_TextChanged(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(tbPartMin.Text) || !int.TryParse(tbPartMin.Text, out _)) {
+                tbPartMin.BackColor = Color.Red;
+            } else {
+                tbPartMin.BackColor = Color.White;
+            }
+        }
+
+        private void tbPartInOrOut_TextChanged(object sender, EventArgs e) {
+            if (rbInHouse.Checked) {
+                if (string.IsNullOrWhiteSpace(tbPartInOrOut.Text) || !int.TryParse(tbPartInOrOut.Text, out _)) {
+                    tbPartInOrOut.BackColor = Color.Red;
+                } else {
+                    tbPartInOrOut.BackColor = Color.White;
+                }
+            } else if (rbOutSourced.Checked) {
+                if (string.IsNullOrWhiteSpace(tbPartInOrOut.Text)) {
+                    tbPartInOrOut.BackColor = Color.Red;
+                } else {
+                    tbPartInOrOut.BackColor = Color.White;
+                }
+            }
+        }
+
+        //Save Validation
         private bool Validate(TextBox tb) {
             if (string.IsNullOrWhiteSpace(tb.Text)) {
                 tb.BackColor = Color.Red;
@@ -59,6 +130,8 @@ namespace Travis_Brown_Inventory_Management {
 
             return isValid;
         }
+
+
 
         private void btnSavePart_Click(object sender, EventArgs e) {
             if (!ValidateFields()) {
@@ -120,7 +193,7 @@ namespace Travis_Brown_Inventory_Management {
         private void btnCancelPart_Click(object sender, EventArgs e) {
             var res = MessageBox.Show("Are you sure you want to cancel?");
 
-            if(res == DialogResult.OK) {
+            if (res == DialogResult.OK) {
                 this.Close();
             }
         }

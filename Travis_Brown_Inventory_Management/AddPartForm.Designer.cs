@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             rbInHouse = new RadioButton();
             rbOutSourced = new RadioButton();
@@ -42,6 +43,7 @@
             tbPartName = new TextBox();
             tbPartPrice = new TextBox();
             tbPartMin = new TextBox();
+            toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
             // label1
@@ -167,6 +169,7 @@
             tbPartInOrOut.Name = "tbPartInOrOut";
             tbPartInOrOut.Size = new Size(139, 23);
             tbPartInOrOut.TabIndex = 12;
+            tbPartInOrOut.TextChanged += tbPartInOrOut_TextChanged;
             // 
             // tbPartMax
             // 
@@ -175,6 +178,7 @@
             tbPartMax.Name = "tbPartMax";
             tbPartMax.Size = new Size(83, 23);
             tbPartMax.TabIndex = 13;
+            tbPartMax.TextChanged += tbPartMax_TextChanged;
             // 
             // tbPartID
             // 
@@ -183,6 +187,7 @@
             tbPartID.Name = "tbPartID";
             tbPartID.Size = new Size(139, 23);
             tbPartID.TabIndex = 14;
+            tbPartID.TextChanged += tbPartID_TextChanged;
             // 
             // tbPartInventory
             // 
@@ -191,6 +196,7 @@
             tbPartInventory.Name = "tbPartInventory";
             tbPartInventory.Size = new Size(139, 23);
             tbPartInventory.TabIndex = 15;
+            tbPartInventory.TextChanged += tbPartInventory_TextChanged;
             // 
             // tbPartName
             // 
@@ -199,6 +205,7 @@
             tbPartName.Name = "tbPartName";
             tbPartName.Size = new Size(139, 23);
             tbPartName.TabIndex = 16;
+            tbPartName.TextChanged += tbPartName_TextChanged;
             // 
             // tbPartPrice
             // 
@@ -207,6 +214,7 @@
             tbPartPrice.Name = "tbPartPrice";
             tbPartPrice.Size = new Size(139, 23);
             tbPartPrice.TabIndex = 17;
+            tbPartPrice.TextChanged += tbPartPrice_TextChanged;
             // 
             // tbPartMin
             // 
@@ -215,6 +223,7 @@
             tbPartMin.Name = "tbPartMin";
             tbPartMin.Size = new Size(83, 23);
             tbPartMin.TabIndex = 18;
+            tbPartMin.TextChanged += tbPartMin_TextChanged;
             // 
             // AddPartForm
             // 
@@ -267,5 +276,6 @@
         private TextBox tbPartName;
         private TextBox tbPartPrice;
         private TextBox tbPartMin;
+        private ToolTip toolTip1;
     }
 }
