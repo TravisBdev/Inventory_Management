@@ -31,11 +31,11 @@
             btnSearchPart = new Button();
             btnSearchProduct = new Button();
             dgvParts = new DataGridView();
+            Part_ID = new DataGridViewTextBoxColumn();
+            Part_Name = new DataGridViewTextBoxColumn();
+            Part_Inventory = new DataGridViewTextBoxColumn();
+            Part_Price = new DataGridViewTextBoxColumn();
             dgvProducts = new DataGridView();
-            Product_ID = new DataGridViewTextBoxColumn();
-            Product_Name = new DataGridViewTextBoxColumn();
-            Product_Inventory = new DataGridViewTextBoxColumn();
-            Product_Price = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -48,10 +48,10 @@
             btnModifyProduct = new Button();
             btnDeleteProduct = new Button();
             btnExitMainScreen = new Button();
-            Part_ID = new DataGridViewTextBoxColumn();
-            Part_Name = new DataGridViewTextBoxColumn();
-            Part_Inventory = new DataGridViewTextBoxColumn();
-            Part_Price = new DataGridViewTextBoxColumn();
+            Product_ID = new DataGridViewTextBoxColumn();
+            Product_Name = new DataGridViewTextBoxColumn();
+            Product_Inventory = new DataGridViewTextBoxColumn();
+            Product_Price = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvParts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
@@ -98,6 +98,30 @@
             dgvParts.Size = new Size(443, 150);
             dgvParts.TabIndex = 3;
             // 
+            // Part_ID
+            // 
+            Part_ID.DataPropertyName = "PartID";
+            Part_ID.HeaderText = "Part ID";
+            Part_ID.Name = "Part_ID";
+            // 
+            // Part_Name
+            // 
+            Part_Name.DataPropertyName = "Name";
+            Part_Name.HeaderText = "Part Name";
+            Part_Name.Name = "Part_Name";
+            // 
+            // Part_Inventory
+            // 
+            Part_Inventory.DataPropertyName = "InStock";
+            Part_Inventory.HeaderText = "Inventory";
+            Part_Inventory.Name = "Part_Inventory";
+            // 
+            // Part_Price
+            // 
+            Part_Price.DataPropertyName = "Price";
+            Part_Price.HeaderText = "Price";
+            Part_Price.Name = "Part_Price";
+            // 
             // dgvProducts
             // 
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -108,26 +132,6 @@
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(444, 150);
             dgvProducts.TabIndex = 4;
-            // 
-            // Product_ID
-            // 
-            Product_ID.HeaderText = "Product ID";
-            Product_ID.Name = "Product_ID";
-            // 
-            // Product_Name
-            // 
-            Product_Name.HeaderText = "Product Name";
-            Product_Name.Name = "Product_Name";
-            // 
-            // Product_Inventory
-            // 
-            Product_Inventory.HeaderText = "Inventory";
-            Product_Inventory.Name = "Product_Inventory";
-            // 
-            // Product_Price
-            // 
-            Product_Price.HeaderText = "Price";
-            Product_Price.Name = "Product_Price";
             // 
             // label2
             // 
@@ -243,29 +247,29 @@
             btnExitMainScreen.UseVisualStyleBackColor = true;
             btnExitMainScreen.Click += btnExitMainScreen_Click;
             // 
-            // Part_ID
+            // Product_ID
             // 
-            Part_ID.DataPropertyName = "PartID";
-            Part_ID.HeaderText = "Part ID";
-            Part_ID.Name = "Part_ID";
+            Product_ID.DataPropertyName = "ProductID";
+            Product_ID.HeaderText = "Product ID";
+            Product_ID.Name = "Product_ID";
             // 
-            // Part_Name
+            // Product_Name
             // 
-            Part_Name.DataPropertyName = "Name";
-            Part_Name.HeaderText = "Part Name";
-            Part_Name.Name = "Part_Name";
+            Product_Name.DataPropertyName = "Name";
+            Product_Name.HeaderText = "Product Name";
+            Product_Name.Name = "Product_Name";
             // 
-            // Part_Inventory
+            // Product_Inventory
             // 
-            Part_Inventory.DataPropertyName = "InStock";
-            Part_Inventory.HeaderText = "Inventory";
-            Part_Inventory.Name = "Part_Inventory";
+            Product_Inventory.DataPropertyName = "InStock";
+            Product_Inventory.HeaderText = "Inventory";
+            Product_Inventory.Name = "Product_Inventory";
             // 
-            // Part_Price
+            // Product_Price
             // 
-            Part_Price.DataPropertyName = "Price";
-            Part_Price.HeaderText = "Price";
-            Part_Price.Name = "Part_Price";
+            Product_Price.DataPropertyName = "Price";
+            Product_Price.HeaderText = "Price";
+            Product_Price.Name = "Product_Price";
             // 
             // Form1
             // 
@@ -318,13 +322,13 @@
         private Button btnModifyProduct;
         private Button btnDeleteProduct;
         private Button btnExitMainScreen;
-        private DataGridViewTextBoxColumn Product_ID;
-        private DataGridViewTextBoxColumn Product_Name;
-        private DataGridViewTextBoxColumn Product_Inventory;
-        private DataGridViewTextBoxColumn Product_Price;
         private DataGridViewTextBoxColumn Part_ID;
         private DataGridViewTextBoxColumn Part_Name;
         private DataGridViewTextBoxColumn Part_Inventory;
         private DataGridViewTextBoxColumn Part_Price;
+        private DataGridViewTextBoxColumn Product_ID;
+        private DataGridViewTextBoxColumn Product_Name;
+        private DataGridViewTextBoxColumn Product_Inventory;
+        private DataGridViewTextBoxColumn Product_Price;
     }
 }

@@ -82,8 +82,8 @@ namespace Travis_Brown_Inventory_Management
                 Product product = Inventory.lookUpProduct(productId);
 
                 if (product != null) {
-                    var searchResults = new BindingList<Product>();
-                    searchResults.Add(product);
+                    var res = new BindingList<Product> { product };
+                    dgvProducts.DataSource = res;
                 } else {
                     MessageBox.Show("Sorry, this product could not be found.");
                 }

@@ -49,8 +49,7 @@ namespace Travis_Brown_Inventory_Management.Classes {
 
         public static void addPart(Part part) => AllParts.Add(part);
 
-        //Not sure if I'll need the ID for the deletePart method
-        //Just writing a simple delete method for now.
+        
         public static bool deletePart(Part part) {
             return AllParts.Remove(part);
         }
@@ -64,9 +63,11 @@ namespace Travis_Brown_Inventory_Management.Classes {
             return null;
         }
 
-        public static void UpdatePart(int id, Part updatePart) {
+        public static void updatePart(int id, Part updatePart) {
             for(int i = 0; i < AllParts.Count; i++) {
                 if (AllParts[i].PartID == id) {
+                    AllParts.RemoveAt(i);
+                    AllParts.Insert(i, updatePart);
                     AllParts[i] = updatePart;
                 }
             }

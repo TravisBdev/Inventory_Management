@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Travis_Brown_Inventory_Management.Classes;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Travis_Brown_Inventory_Management {
     public partial class ModifyPartForm : Form {
@@ -77,31 +78,46 @@ namespace Travis_Brown_Inventory_Management {
         }
 
         private void btnModPartSave_Click(object sender, EventArgs e) {
-            if (!ValidateFields()) {
+            if(!ValidateFields()) {
                 MessageBox.Show("Please fill out all fields.");
                 return;
             }
 
             try {
-                selected.Name = tbModPartName.Text;
-                selected.InStock = int.Parse(tbModPartInventory.Text);
-                selected.Price = decimal.Parse(tbModPartPrice.Text);
-                selected.Min = int.Parse(tbModPartMin.Text);
-                selected.Max = int.Parse(tbModPartMax.Text);
+                string name = tbModPartName.Text;
+                int inventory = int.Parse(tbModPartInventory.Text);
+                decimal price = decimal.Parse(tbModPartPrice.Text);
+                int min = int.Parse(tbModPartMin.Text);
+                int max = int.Parse(tbModPartMax.Text);
 
-                if(selected.Min > selected.Max || selected.InStock < selected.Min || selected.InStock > selected.Max) {
-                    MessageBox.Show("Min cannot be greater than max. Inventory cannot be less than min or greater than max.");
+                if(min > max || inventory < min || inventory > max) {
+                    MessageBox.Show("Min cannot be greater than max. Inventory must be between min and max.");
                     return;
                 }
 
-                if(rbInHouse.Checked && selected is InHouse inPart) {
-                    inPart.MachineID = int.Parse(tbModPartInOrOut.Text);
-                }else if(rbOutSourced.Checked && selected is Outsourced outPart) {
-                    outPart.CompanyName = tbModPartInOrOut.Text;
+                Part toUpdate;
+                if(rbInHouse.Checked) {
+                    toUpdate = new InHouse {
+                        PartID = selected.PartID,
+                        Name = name,
+                        InStock = inventory,
+                        Price = price,
+                        Min = min,
+                        Max = max,
+                        MachineID = int.Parse(tbModPartInOrOut.Text)
+                    };
+                }else {
+                    toUpdate = new Outsourced {
+                        PartID = selected.PartID,
+                        Name = name,
+                        InStock = inventory,
+                        Price = price,
+                        Min = min,
+                        Max = max,
+                        CompanyName = tbModPartInOrOut.Text
+                    };
                 }
-
-                Inventory.AllParts.Remove(selected);
-                Inventory.AllParts.Add(selected);
+                Inventory.updatePart(selected.PartID, toUpdate);
 
                 this.Close();
 

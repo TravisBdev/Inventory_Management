@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             label1 = new Label();
             btnSearchAddProduct = new Button();
-            textBox1 = new TextBox();
+            tbAddProdSearch = new TextBox();
             label2 = new Label();
             dgvAddProdPartsList = new DataGridView();
             Part_ID = new DataGridViewTextBoxColumn();
@@ -76,12 +76,12 @@
             btnSearchAddProduct.Text = "Search";
             btnSearchAddProduct.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbAddProdSearch
             // 
-            textBox1.Location = new Point(535, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(196, 23);
-            textBox1.TabIndex = 2;
+            tbAddProdSearch.Location = new Point(535, 12);
+            tbAddProdSearch.Name = "tbAddProdSearch";
+            tbAddProdSearch.Size = new Size(196, 23);
+            tbAddProdSearch.TabIndex = 2;
             // 
             // label2
             // 
@@ -320,7 +320,7 @@
             Controls.Add(btnAddPart);
             Controls.Add(dgvAddProdPartsList);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(tbAddProdSearch);
             Controls.Add(btnSearchAddProduct);
             Controls.Add(label1);
             Name = "AddProductForm";
@@ -335,7 +335,7 @@
 
         private Label label1;
         private Button btnSearchAddProduct;
-        private TextBox textBox1;
+        private TextBox tbAddProdSearch;
         private Label label2;
         private DataGridView dgvAddProdPartsList;
         private DataGridViewTextBoxColumn Part_ID;
