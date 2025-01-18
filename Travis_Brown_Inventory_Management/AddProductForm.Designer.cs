@@ -184,6 +184,7 @@
             btnDeletePart.TabIndex = 7;
             btnDeletePart.Text = "Delete";
             btnDeletePart.UseVisualStyleBackColor = true;
+            btnDeletePart.Click += btnDeletePart_Click;
             // 
             // label3
             // 

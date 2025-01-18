@@ -126,7 +126,7 @@ namespace Travis_Brown_Inventory_Management
                 return;
             }
 
-            Product selected = (Product)dgvParts.CurrentRow.DataBoundItem;
+            Product selected = (Product)dgvProducts.CurrentRow.DataBoundItem;
 
             var check = MessageBox.Show(
                 "Are you sure you want to delete this item?",

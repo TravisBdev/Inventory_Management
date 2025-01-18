@@ -23,15 +23,16 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             btnSearchModProd = new Button();
             tbSearchModProd = new TextBox();
             dgvModProdAssociatedList = new DataGridView();
-            label2 = new Label();
             Part_ID = new DataGridViewTextBoxColumn();
             Part_Name = new DataGridViewTextBoxColumn();
             Part_Inventory = new DataGridViewTextBoxColumn();
             Part_Price = new DataGridViewTextBoxColumn();
+            label2 = new Label();
             btnDeletePart = new Button();
             btnAddPart = new Button();
             btnCancelModifyProd = new Button();
@@ -48,7 +49,14 @@
             tbModProdPrice = new TextBox();
             tbModProdMax = new TextBox();
             tbModProdMin = new TextBox();
+            toolTip1 = new ToolTip(components);
+            dgvModProdParts = new DataGridView();
+            PartID = new DataGridViewTextBoxColumn();
+            PartName = new DataGridViewTextBoxColumn();
+            InStock = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvModProdAssociatedList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvModProdParts).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -68,6 +76,7 @@
             btnSearchModProd.TabIndex = 1;
             btnSearchModProd.Text = "Search";
             btnSearchModProd.UseVisualStyleBackColor = true;
+            btnSearchModProd.Click += btnSearchModProd_Click;
             // 
             // tbSearchModProd
             // 
@@ -80,43 +89,47 @@
             // 
             dgvModProdAssociatedList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvModProdAssociatedList.Columns.AddRange(new DataGridViewColumn[] { Part_ID, Part_Name, Part_Inventory, Part_Price });
-            dgvModProdAssociatedList.Location = new Point(323, 88);
+            dgvModProdAssociatedList.Location = new Point(374, 331);
             dgvModProdAssociatedList.Name = "dgvModProdAssociatedList";
             dgvModProdAssociatedList.Size = new Size(444, 150);
             dgvModProdAssociatedList.TabIndex = 3;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(323, 60);
-            label2.Name = "label2";
-            label2.Size = new Size(186, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Parts Associated with this Product";
-            // 
             // Part_ID
             // 
+            Part_ID.DataPropertyName = "PartID";
             Part_ID.HeaderText = "Part ID";
             Part_ID.Name = "Part_ID";
             // 
             // Part_Name
             // 
+            Part_Name.DataPropertyName = "Name";
             Part_Name.HeaderText = "Part Name";
             Part_Name.Name = "Part_Name";
             // 
             // Part_Inventory
             // 
+            Part_Inventory.DataPropertyName = "InStock";
             Part_Inventory.HeaderText = "Inventory";
             Part_Inventory.Name = "Part_Inventory";
             // 
             // Part_Price
             // 
+            Part_Price.DataPropertyName = "Price";
             Part_Price.HeaderText = "Price";
             Part_Price.Name = "Part_Price";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(374, 305);
+            label2.Name = "label2";
+            label2.Size = new Size(186, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Parts Associated with this Product";
+            // 
             // btnDeletePart
             // 
-            btnDeletePart.Location = new Point(713, 244);
+            btnDeletePart.Location = new Point(763, 487);
             btnDeletePart.Name = "btnDeletePart";
             btnDeletePart.Size = new Size(55, 35);
             btnDeletePart.TabIndex = 5;
@@ -125,30 +138,33 @@
             // 
             // btnAddPart
             // 
-            btnAddPart.Location = new Point(649, 244);
+            btnAddPart.Location = new Point(760, 223);
             btnAddPart.Name = "btnAddPart";
             btnAddPart.Size = new Size(58, 35);
             btnAddPart.TabIndex = 6;
             btnAddPart.Text = "Add";
             btnAddPart.UseVisualStyleBackColor = true;
+            btnAddPart.Click += btnAddPart_Click;
             // 
             // btnCancelModifyProd
             // 
-            btnCancelModifyProd.Location = new Point(761, 403);
+            btnCancelModifyProd.Location = new Point(760, 549);
             btnCancelModifyProd.Name = "btnCancelModifyProd";
             btnCancelModifyProd.Size = new Size(58, 35);
             btnCancelModifyProd.TabIndex = 7;
             btnCancelModifyProd.Text = "Cancel";
             btnCancelModifyProd.UseVisualStyleBackColor = true;
+            btnCancelModifyProd.Click += btnCancelModifyProd_Click;
             // 
             // btnSaveModifyProd
             // 
-            btnSaveModifyProd.Location = new Point(697, 403);
+            btnSaveModifyProd.Location = new Point(696, 549);
             btnSaveModifyProd.Name = "btnSaveModifyProd";
             btnSaveModifyProd.Size = new Size(58, 35);
             btnSaveModifyProd.TabIndex = 8;
             btnSaveModifyProd.Text = "Save";
             btnSaveModifyProd.UseVisualStyleBackColor = true;
+            btnSaveModifyProd.Click += btnSaveModifyProd_Click;
             // 
             // label3
             // 
@@ -206,6 +222,7 @@
             // 
             // tbModProdID
             // 
+            tbModProdID.Enabled = false;
             tbModProdID.Location = new Point(108, 139);
             tbModProdID.Name = "tbModProdID";
             tbModProdID.Size = new Size(154, 23);
@@ -217,6 +234,7 @@
             tbModProdName.Name = "tbModProdName";
             tbModProdName.Size = new Size(154, 23);
             tbModProdName.TabIndex = 16;
+            tbModProdName.TextChanged += tbModProdName_TextChanged;
             // 
             // tbModProdInventory
             // 
@@ -224,6 +242,7 @@
             tbModProdInventory.Name = "tbModProdInventory";
             tbModProdInventory.Size = new Size(154, 23);
             tbModProdInventory.TabIndex = 17;
+            tbModProdInventory.TextChanged += tbModProdInventory_TextChanged;
             // 
             // tbModProdPrice
             // 
@@ -231,6 +250,7 @@
             tbModProdPrice.Name = "tbModProdPrice";
             tbModProdPrice.Size = new Size(154, 23);
             tbModProdPrice.TabIndex = 18;
+            tbModProdPrice.TextChanged += tbModProdPrice_TextChanged;
             // 
             // tbModProdMax
             // 
@@ -238,6 +258,7 @@
             tbModProdMax.Name = "tbModProdMax";
             tbModProdMax.Size = new Size(78, 23);
             tbModProdMax.TabIndex = 19;
+            tbModProdMax.TextChanged += tbModProdMax_TextChanged;
             // 
             // tbModProdMin
             // 
@@ -245,12 +266,47 @@
             tbModProdMin.Name = "tbModProdMin";
             tbModProdMin.Size = new Size(78, 23);
             tbModProdMin.TabIndex = 20;
+            tbModProdMin.TextChanged += tbModProdMin_TextChanged;
+            // 
+            // dgvModProdParts
+            // 
+            dgvModProdParts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvModProdParts.Columns.AddRange(new DataGridViewColumn[] { PartID, PartName, InStock, Price });
+            dgvModProdParts.Location = new Point(374, 67);
+            dgvModProdParts.Name = "dgvModProdParts";
+            dgvModProdParts.Size = new Size(444, 150);
+            dgvModProdParts.TabIndex = 21;
+            // 
+            // PartID
+            // 
+            PartID.DataPropertyName = "PartID";
+            PartID.HeaderText = "Part ID";
+            PartID.Name = "PartID";
+            // 
+            // PartName
+            // 
+            PartName.DataPropertyName = "Name";
+            PartName.HeaderText = "Part Name";
+            PartName.Name = "PartName";
+            // 
+            // InStock
+            // 
+            InStock.DataPropertyName = "InStock";
+            InStock.HeaderText = "Inventory";
+            InStock.Name = "InStock";
+            // 
+            // Price
+            // 
+            Price.DataPropertyName = "Price";
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
             // 
             // ModifyProductForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(830, 450);
+            ClientSize = new Size(830, 596);
+            Controls.Add(dgvModProdParts);
             Controls.Add(tbModProdMin);
             Controls.Add(tbModProdMax);
             Controls.Add(tbModProdPrice);
@@ -274,7 +330,9 @@
             Controls.Add(label1);
             Name = "ModifyProductForm";
             Text = "ModifyProductForm";
+            Load += ModifyProductForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvModProdAssociatedList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvModProdParts).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -286,10 +344,6 @@
         private TextBox tbSearchModProd;
         private DataGridView dgvModProdAssociatedList;
         private Label label2;
-        private DataGridViewTextBoxColumn Part_ID;
-        private DataGridViewTextBoxColumn Part_Name;
-        private DataGridViewTextBoxColumn Part_Inventory;
-        private DataGridViewTextBoxColumn Part_Price;
         private Button btnDeletePart;
         private Button btnAddPart;
         private Button btnCancelModifyProd;
@@ -306,5 +360,15 @@
         private TextBox tbModProdPrice;
         private TextBox tbModProdMax;
         private TextBox tbModProdMin;
+        private DataGridViewTextBoxColumn Part_ID;
+        private DataGridViewTextBoxColumn Part_Name;
+        private DataGridViewTextBoxColumn Part_Inventory;
+        private DataGridViewTextBoxColumn Part_Price;
+        private ToolTip toolTip1;
+        private DataGridView dgvModProdParts;
+        private DataGridViewTextBoxColumn PartID;
+        private DataGridViewTextBoxColumn PartName;
+        private DataGridViewTextBoxColumn InStock;
+        private DataGridViewTextBoxColumn Price;
     }
 }
