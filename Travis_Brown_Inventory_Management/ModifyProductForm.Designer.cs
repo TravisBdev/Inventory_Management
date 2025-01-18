@@ -135,6 +135,7 @@
             btnDeletePart.TabIndex = 5;
             btnDeletePart.Text = "Delete";
             btnDeletePart.UseVisualStyleBackColor = true;
+            btnDeletePart.Click += btnDeletePart_Click;
             // 
             // btnAddPart
             // 

@@ -158,26 +158,43 @@ namespace Travis_Brown_Inventory_Management {
         }
 
         private void btnAddPart_Click(object sender, EventArgs e) {
-            if(dgvModProdParts.CurrentRow == null) {
+            if (dgvModProdParts.CurrentRow == null) {
                 MessageBox.Show("You must select a part to add.");
                 return;
             }
 
             Part selectedPart = (Part)dgvModProdParts.CurrentRow.DataBoundItem;
 
-            if(selected.AssociatedParts.Contains(selectedPart)) {
+            if (selected.AssociatedParts.Contains(selectedPart)) {
                 MessageBox.Show("Please select a part that is not already associated");
                 return;
             }
 
-            if(selected != null) {
+            if (selected != null) {
                 selected.AssociatedParts.Add(selectedPart);
             }
 
             dgvModProdAssociatedList.DataSource = null;
             dgvModProdAssociatedList.DataSource = selected.AssociatedParts;
-            
-            
+
+
+        }
+
+        private void btnDeletePart_Click(object sender, EventArgs e) {
+            if(dgvModProdAssociatedList.CurrentRow == null) {
+                MessageBox.Show("Please select an associated part to delete");
+            }
+
+            Part selectedPart = (Part)dgvModProdAssociatedList.CurrentRow.DataBoundItem;
+
+            var res = MessageBox.Show("Are you sure you want to delete this item?","Confirm Please", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(res == DialogResult.Yes) {
+                selected.removeAssociatedPart(selectedPart);
+
+                dgvModProdAssociatedList.ClearSelection();
+                dgvModProdAssociatedList.CurrentCell = null;
+            }
         }
     }
 }
